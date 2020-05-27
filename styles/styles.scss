@@ -236,6 +236,7 @@ main {
       display: flex;
       flex-direction: column;
 
+
     }
 
   h1{
@@ -247,6 +248,10 @@ main {
       width: 95%;
     
       }
+    
+  a{
+    text-decoration: none;
+  }
     
     
   /* header */
@@ -314,7 +319,7 @@ main {
 
   .phone_img{
     z-index: -1;
-    width: 100vw;
+    width: 98vw;
     height: auto;
   }
 
@@ -330,13 +335,18 @@ main {
     position: relative;
     display: grid;
     width: 100%;
+    line-height: 0;
+    font-size: 0;
 
       img{
         width: 100vw;
         height: auto;
+  
       }
+      
 
     }
+
 
   /* Algunos de nuestros temas */ 
 
@@ -402,22 +412,163 @@ main {
     justify-content: center;
   }
 
-.social_media{   
-  display: flex;
-  flex-direction: row;
-  
-    div{
-      display: flex;
-      justify-content: space-between;
-      padding: 1em;
-      }
+  .social_media{   
+    display: flex;
+    flex-direction: row;
+    
+      div{
+        display: flex;
+        justify-content: space-between;
+        padding: 1em;
+        }
 
-    a{
-      text-decoration: none;
-      color: $font_color;
-     } 
-  
-}
+      a{
+        color: $font_color;
+      } 
+    
+  }
+
+ /* 48em = 768px @ 16px font */
+
+
+ @media screen and (min-width: 768px) and (max-width: 1023px)  {
+    
+      .content{
+        h1{
+          font-size: 42px;
+        }
+        p{
+          font-size: 15px;
+        }
+
+      }
+    
+        /* header */
+
+        .header{
+          margin-left: 6.525em;
+          margin-right: 1em;
+          top: 12.5em;
+
+            p {
+              top: 17.75em;
+              width: 53%;
+            }
+
+        }
+
+        .button_1{
+          
+          top: 300em;
+          left: 12.5em;
+          width: 12.5em;
+          font-size: 18px;
+          line-height: 24px;
+          
+        }
+
+        /* Episodios */
+
+
+        .episodes { 
+          min-height: 50em;
+          clip-path: polygon( 0 5%, 100% 0, 100% 95%, 0 100%);
+
+          h1{
+            padding-left: 3em;
+          }
+        
+
+        }
+        
+        .episodes_spotify{
+          display: grid;
+          grid-template-columns: 1fr 1fr;
+          grid-template-rows: 1fr 1fr;
+        }
+
+        /* De dónde venimos */
+
+        .phone{
+          margin-top: -15%;
+          display: grid;
+          grid-template-columns: 1fr 1fr;
+
+          h1{
+            padding-top: 2em;
+          }
+
+        }
+
+        .phone_img{
+
+          width: 45vw;
+          height: auto;
+          padding-left: 3em;
+        }
+
+        /* Invitadas/os estelares */
+
+        .stellar_guests{
+            h1{
+            padding-left: 2em; 
+            }
+        
+        }
+
+        .gallery{
+          grid-template-columns: 1fr 1fr;
+          grid-template-rows: 1fr 1fr;
+
+            img{
+              width: 50vw;
+              height: auto;
+            }
+
+          }
+
+      /* Algunos de nuestros temas */ 
+
+          
+        .topics{
+          position: relative;
+          flex-direction: column;
+         
+
+            h1{
+              padding-top: 1em;
+              padding-left: 2em;
+              padding-bottom: 1em;
+            }
+
+        }
+
+        .topics .icons{
+          display: grid;
+          grid-template-columns: 1fr 1fr ;
+          grid-template-rows: 1fr 1fr;
+
+        }
+
+      /* NOVEDADES */
+
+      .news{
+        min-height: 20em;
+        clip-path: polygon( 0 25%, 100% 0, 100% 100%, 0 100%);
+
+
+          h1{
+            padding-top: 3em;
+          }
+
+          a {
+            width: 30%;
+          }
+
+        }
+
+ }
+
 
   /* 64em = 1024px @ 16px font */
 
@@ -434,7 +585,6 @@ main {
       padding-left: 6.25em;
     }
 
-  
 
     .navigation li {
         float: left;
@@ -482,20 +632,15 @@ main {
     p {
         @include paragraph_laptop();
           
-    }
+      }
 
    /* header */
 
     .header{
-      margin-left: 12.5em;
+      margin-left: 10em;
       margin-right: 1em;
       top: 12.5em;
 
-
-        p {
-          top: 17.75em;
-          width: 53%;
-        }
 
     }
 
@@ -517,7 +662,8 @@ main {
       clip-path: polygon( 0 5%, 100% 0, 100% 95%, 0 100%);
 
       h1{
-        padding-left: 3em;
+        padding-left: 2.5em;
+        color: $white;
       }
      
 
@@ -537,7 +683,7 @@ main {
       grid-template-columns: 1fr 1fr;
 
       h1{
-        padding-top: 3em;
+        padding-top: 4em;
       }
 
     }
@@ -553,7 +699,7 @@ main {
 
      .stellar_guests{
         h1{
-         padding-left: 3em; 
+          padding-left: 2.5em;
         }
     
     }
@@ -573,24 +719,22 @@ main {
 
       
     .topics{
+      position: relative;
       flex-direction: column;
 
         h1{
-          padding-left: 3em;
+          padding-left: 2.5em;
         }
 
     }
 
     .icons{
+
       width: 70%;
       
       display:flex;
       flex-direction: row;
       justify-content: space-between;
-
-      a{
-        text-decoration: none;
-      }
 
     }
 
@@ -606,7 +750,7 @@ main {
       }
 
       a {
-        width: 50%;
+        width: 21.5em;
       }
 
     }
@@ -620,9 +764,10 @@ main {
     }
 
     .copyright{
-      margin-left: 6.9%;
-      font-size: 16px;
+      padding-left: 6.25em;
+
     }
+
 
    .social_media{
       margin-right: 6.9%;

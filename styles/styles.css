@@ -172,6 +172,10 @@ p {
   width: 95%;
 }
 
+a {
+  text-decoration: none;
+}
+
 /* header */
 .header {
   margin-right: 1em;
@@ -260,7 +264,7 @@ p {
 
 .phone_img {
   z-index: -1;
-  width: 100vw;
+  width: 98vw;
   height: auto;
 }
 
@@ -280,6 +284,8 @@ p {
   display: -ms-grid;
   display: grid;
   width: 100%;
+  line-height: 0;
+  font-size: 0;
 }
 
 .gallery img {
@@ -401,8 +407,114 @@ p {
 }
 
 .social_media a {
-  text-decoration: none;
   color: #060A24;
+}
+
+/* 48em = 768px @ 16px font */
+@media screen and (min-width: 768px) and (max-width: 1023px) {
+  .content h1 {
+    font-size: 42px;
+  }
+  .content p {
+    font-size: 15px;
+  }
+  /* header */
+  .header {
+    margin-left: 6.525em;
+    margin-right: 1em;
+    top: 12.5em;
+  }
+  .header p {
+    top: 17.75em;
+    width: 53%;
+  }
+  .button_1 {
+    top: 300em;
+    left: 12.5em;
+    width: 12.5em;
+    font-size: 18px;
+    line-height: 24px;
+  }
+  /* Episodios */
+  .episodes {
+    min-height: 50em;
+    -webkit-clip-path: polygon(0 5%, 100% 0, 100% 95%, 0 100%);
+            clip-path: polygon(0 5%, 100% 0, 100% 95%, 0 100%);
+  }
+  .episodes h1 {
+    padding-left: 3em;
+  }
+  .episodes_spotify {
+    display: -ms-grid;
+    display: grid;
+    -ms-grid-columns: 1fr 1fr;
+        grid-template-columns: 1fr 1fr;
+    -ms-grid-rows: 1fr 1fr;
+        grid-template-rows: 1fr 1fr;
+  }
+  /* De dónde venimos */
+  .phone {
+    margin-top: -15%;
+    display: -ms-grid;
+    display: grid;
+    -ms-grid-columns: 1fr 1fr;
+        grid-template-columns: 1fr 1fr;
+  }
+  .phone h1 {
+    padding-top: 2em;
+  }
+  .phone_img {
+    width: 45vw;
+    height: auto;
+    padding-left: 3em;
+  }
+  /* Invitadas/os estelares */
+  .stellar_guests h1 {
+    padding-left: 2em;
+  }
+  .gallery {
+    -ms-grid-columns: 1fr 1fr;
+        grid-template-columns: 1fr 1fr;
+    -ms-grid-rows: 1fr 1fr;
+        grid-template-rows: 1fr 1fr;
+  }
+  .gallery img {
+    width: 50vw;
+    height: auto;
+  }
+  /* Algunos de nuestros temas */
+  .topics {
+    position: relative;
+    -webkit-box-orient: vertical;
+    -webkit-box-direction: normal;
+        -ms-flex-direction: column;
+            flex-direction: column;
+  }
+  .topics h1 {
+    padding-top: 1em;
+    padding-left: 2em;
+    padding-bottom: 1em;
+  }
+  .topics .icons {
+    display: -ms-grid;
+    display: grid;
+    -ms-grid-columns: 1fr 1fr;
+        grid-template-columns: 1fr 1fr;
+    -ms-grid-rows: 1fr 1fr;
+        grid-template-rows: 1fr 1fr;
+  }
+  /* NOVEDADES */
+  .news {
+    min-height: 20em;
+    -webkit-clip-path: polygon(0 25%, 100% 0, 100% 100%, 0 100%);
+            clip-path: polygon(0 25%, 100% 0, 100% 100%, 0 100%);
+  }
+  .news h1 {
+    padding-top: 3em;
+  }
+  .news a {
+    width: 30%;
+  }
 }
 
 /* 64em = 1024px @ 16px font */
@@ -468,13 +580,9 @@ p {
   }
   /* header */
   .header {
-    margin-left: 12.5em;
+    margin-left: 10em;
     margin-right: 1em;
     top: 12.5em;
-  }
-  .header p {
-    top: 17.75em;
-    width: 53%;
   }
   .button_1 {
     top: 300em;
@@ -490,7 +598,8 @@ p {
             clip-path: polygon(0 5%, 100% 0, 100% 95%, 0 100%);
   }
   .episodes h1 {
-    padding-left: 3em;
+    padding-left: 2.5em;
+    color: #fff;
   }
   .episodes_spotify {
     display: -ms-grid;
@@ -509,7 +618,7 @@ p {
         grid-template-columns: 1fr 1fr;
   }
   .phone h1 {
-    padding-top: 3em;
+    padding-top: 4em;
   }
   .phone_img {
     width: 45vw;
@@ -518,7 +627,7 @@ p {
   }
   /* Invitadas/os estelares */
   .stellar_guests h1 {
-    padding-left: 3em;
+    padding-left: 2.5em;
   }
   .gallery {
     -ms-grid-columns: 1fr 1fr 1fr;
@@ -532,13 +641,14 @@ p {
   }
   /* Algunos de nuestros temas */
   .topics {
+    position: relative;
     -webkit-box-orient: vertical;
     -webkit-box-direction: normal;
         -ms-flex-direction: column;
             flex-direction: column;
   }
   .topics h1 {
-    padding-left: 3em;
+    padding-left: 2.5em;
   }
   .icons {
     width: 70%;
@@ -553,9 +663,6 @@ p {
         -ms-flex-pack: justify;
             justify-content: space-between;
   }
-  .icons a {
-    text-decoration: none;
-  }
   /* NOVEDADES */
   .news {
     min-height: 32em;
@@ -566,7 +673,7 @@ p {
     padding-top: 3em;
   }
   .news a {
-    width: 50%;
+    width: 21.5em;
   }
   /* footer */
   .footer {
@@ -579,8 +686,7 @@ p {
             justify-content: space-between;
   }
   .copyright {
-    margin-left: 6.9%;
-    font-size: 16px;
+    padding-left: 6.25em;
   }
   .social_media {
     margin-right: 6.9%;
