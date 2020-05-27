@@ -1,0 +1,647 @@
+/* Fuentes*/
+
+@import url('https://fonts.googleapis.com/css2?family=IBM+Plex+Sans:wght@400&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=IBM+Plex+Mono:wght@400&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=IBM+Plex+Sans:wght@600&display=swap');
+
+
+
+
+/* variables */
+
+$blue: linear-gradient(225deg, #0000FF 0%, #0000A3 100%);
+$white:#fff;
+$font_color: #060A24;
+$button:#00F3BB;
+$button_hover: linear-gradient(225deg, #0000FE 0%, #00F0B8 100%);
+
+$IBMPlexMono: 'IBM Plex Mono', monospace;
+$IBMPlexSans: 'IBM Plex Sans', sans-serif;
+
+:root {
+  font-size: 16px;
+}
+
+/* Mixins */
+
+@mixin h1_mobile{
+    font-family: $IBMPlexSans;
+    font-size: 36px;
+    color: $font_color;
+    letter-spacing: 0;
+    line-height: 42px;
+    margin-left: 0.33em;
+    font-weight: 400;
+}
+
+@mixin h1_laptop{
+  font-family: $IBMPlexSans;
+  font-size: 64px;
+  color:$font_color;
+  letter-spacing: 0;
+  padding-top: 1em;
+  padding-bottom: 0.5em;
+  font-weight: 400;
+}
+
+@mixin paragraph_mobile {
+    font-family: $IBMPlexMono;
+    color: $font_color;
+    font-size: 14px;
+    letter-spacing: 0;
+    line-height: 22px;
+    text-align: justify;
+    font-weight: 400;
+    padding-bottom: 2em;
+    margin-left: 1em;
+ }
+
+ @mixin paragraph_laptop {
+  font-family: $IBMPlexMono;
+  color: $font_color;
+  font-size: 16px;
+  letter-spacing: 0;
+  line-height: 24px;
+  text-align: justify;
+  font-weight: 400;
+  padding-bottom: 2em;
+  margin-left: 1em;
+}
+    
+
+@mixin buttons{
+    font-family: $IBMPlexMono;
+    background:$button;
+    color: $font_color;
+    font-weight: 500;
+    letter-spacing: 0;
+    text-align: center;
+    line-height: 22px;
+    text-decoration: none;
+    text-align: center;
+    padding: 1em;
+    margin: 0 auto;
+    border: 0em;
+  
+    &:hover{
+      text-decoration: none;
+      background: $button_hover;
+    }
+    
+}
+
+
+
+/* main */
+main {
+  position: relative;
+  width: 100%;
+
+  display: flex;
+  flex-direction: column;
+
+}
+
+/* nav */
+
+.navigation {
+    position: relative;
+    background-color: $white;
+    width: 100%;
+ 
+    z-index: 3; 
+  }
+  
+  .navigation ul {
+    margin: 0;
+    padding: 0;
+    padding-right: 5%;
+    list-style: none;
+    overflow: hidden;
+    background-color: $white;
+
+  }
+  
+  .navigation li a {
+    display: block;
+    padding: 20px 20px;
+    color: $white;
+    font-family: $IBMPlexMono;
+    font-size: 16px;
+    letter-spacing: 0;
+    background-color: #0000EC;
+    text-decoration: none;
+
+  }
+  
+  .navigation li a:hover,
+  .navigation .menu-btn:hover {
+    background: $button_hover;
+
+  }
+
+  
+  .navigation .logo {
+    display: block;
+    float: left;
+    padding-top: 1em;
+    padding-left: 1em;
+    text-decoration: none;
+
+  }
+  
+  /* menu */
+  
+  .navigation .menu {
+    clear: both;
+    max-height: 0;
+    transition: max-height .2s ease-out;
+
+  }
+  
+  /* menu icon */
+  
+  .navigation .menu-icon {
+    cursor: pointer;
+    float: right;
+    padding: 2em 2em;
+    position: relative;
+    user-select: none;
+    
+  }
+  
+  .navigation .menu-icon .nav-icon {
+    background: #333;
+    display: block;
+    height: 2px;
+    position: relative;
+    transition: background .2s ease-out;
+    width: 18px;
+
+  }
+  
+  .navigation .menu-icon .nav-icon:before,
+  .navigation .menu-icon .nav-icon:after {
+    background: #333;
+    content: '';
+    display: block;
+    height: 100%;
+    position: absolute;
+    transition: all .2s ease-out;
+    width: 100%;
+
+  }
+  
+  .navigation .menu-icon .nav-icon:before {
+    top: 5px;
+  }
+  
+  .navigation .menu-icon .nav-icon:after {
+    top: -5px;
+
+  }
+  
+  /* menu btn */
+  
+  .navigation .menu-btn {
+    display: none;
+
+  }
+  
+  .navigation .menu-btn:checked ~ .menu {
+    max-height: 240px;
+
+  }
+  
+  .navigation .menu-btn:checked ~ .menu-icon .nav-icon {
+    background: transparent;
+
+  }
+  
+  .navigation .menu-btn:checked ~ .menu-icon .nav-icon:before {
+    transform: rotate(-45deg);
+    top:0;
+
+  }
+  
+  .navigation .menu-btn:checked ~ .menu-icon .nav-icon:after {
+    transform: rotate(45deg);
+    top:0;
+
+  }
+
+    /* content */
+
+  .content{
+      display: flex;
+      flex-direction: column;
+
+    }
+
+  h1{
+      @include h1_mobile();
+    }
+
+  p {
+      @include paragraph_mobile();
+      width: 95%;
+    
+      }
+    
+    
+  /* header */
+
+  .header{
+    margin-right: 1em;
+    top: 4.5625em;
+
+    display: flex;
+    flex-direction: column;
+  
+      span{
+        text-decoration-line: line-through;
+      }
+      
+  }
+
+  .button_1{
+    @include buttons();
+    width: 80%;
+    margin: 1em;
+    align-items: center;
+
+  }
+
+
+  /* Episodios */
+
+
+  .episodes { 
+    background: $blue;
+    min-height: 78em;
+    position: relative;
+    overflow: hidden;
+    width: 100%;
+    clip-path: polygon( 0 3%, 100% 0, 100% 97%, 0 100%);
+
+      h1{
+        color: $white;
+        margin-top: 1.5em;
+      }
+
+      div{
+        padding: 0.5em 1em;
+        z-index: 5;
+      } 
+
+  }
+
+/* De dónde venimos */
+
+  .phone{
+    position: relative;
+    margin-top: -25%;
+    margin-right: 1em;
+    z-index: 99;
+
+      p {
+        @include paragraph_mobile();
+        padding-bottom: 2em;
+        margin-left: 1em;
+
+      }
+  }
+
+  .phone_img{
+    z-index: -1;
+    width: 100vw;
+    height: auto;
+  }
+
+ /* Invitadas/os estelares */
+
+  .stellar_guests{
+    display:flex;
+    flex-direction: column;
+
+  }
+
+  .gallery{
+    position: relative;
+    display: grid;
+    width: 100%;
+
+      img{
+        width: 100vw;
+        height: auto;
+      }
+
+    }
+
+  /* Algunos de nuestros temas */ 
+
+  .topics{
+    display:flex;
+    flex-direction: column;
+
+  }
+
+  .icons{
+    text-align: center;
+    margin: 0 auto;
+
+    p{
+      width: 90%;
+      text-align: center;
+      font-weight: 600;
+      font-size: 24px;
+      margin: 0 auto;
+      padding-top: 0.5em;
+      padding-bottom: 1.5em;
+
+    }
+  }
+
+  /* NOVEDADES */
+
+  .news{
+      background: $blue;
+      min-height: 20em;
+      position: relative;
+      overflow: hidden;
+      width: 100%;
+      text-align: center;
+      align-items: center;
+
+      display: flex;
+      flex-direction: column;
+
+      clip-path: polygon( 0 10%, 100% 0, 100% 100%, 0 100%);
+
+        h1{
+          color: $white;
+          padding-top: 1em;
+        }
+
+        a {
+          @include buttons();
+          width: 80%;
+        }
+
+  }
+
+ /* footer */
+
+ .footer{
+    background-color: $white;
+    align-items: center;
+    padding: 1em;
+
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+  }
+
+.social_media{   
+  display: flex;
+  flex-direction: row;
+  
+    div{
+      display: flex;
+      justify-content: space-between;
+      padding: 1em;
+      }
+
+    a{
+      text-decoration: none;
+      color: $font_color;
+     } 
+  
+}
+
+  /* 64em = 1024px @ 16px font */
+
+
+  @media screen and (min-width:1024px) {
+
+    main{
+      overflow-x: hidden;
+    }
+
+    /* nav */
+
+    .navigation .logo{
+      padding-left: 6.25em;
+    }
+
+  
+
+    .navigation li {
+        float: left;
+      }
+
+    .navigation li a {
+        color: $font_color;
+        background-color: $white;
+        line-height: 28px;
+        text-decoration: none;
+        padding: 20px 30px;
+      }
+      
+      .navigation li a:hover,
+      .navigation .menu-btn:hover {
+        background: $white;
+        color: $button;
+        text-decoration-line: line-through;
+
+      }
+
+      .navigation li a:active,
+      .navigation .menu-btn:active {
+        background: $white;
+        text-decoration-line: line-through;
+
+      }
+
+    .navigation .menu {
+      clear: none;
+      float: right;
+      max-height: none;
+    }
+    .navigation .menu-icon {
+      display: none;
+    }
+
+      /* content */
+
+
+    h1{
+        @include h1_laptop();
+      }
+
+    p {
+        @include paragraph_laptop();
+          
+    }
+
+   /* header */
+
+    .header{
+      margin-left: 12.5em;
+      margin-right: 1em;
+      top: 12.5em;
+
+
+        p {
+          top: 17.75em;
+          width: 53%;
+        }
+
+    }
+
+    .button_1{
+      
+      top: 300em;
+      left: 12.5em;
+      width: 12.5em;
+      font-size: 18px;
+      line-height: 24px;
+      
+    }
+
+    /* Episodios */
+
+
+    .episodes { 
+      min-height: 66em;
+      clip-path: polygon( 0 5%, 100% 0, 100% 95%, 0 100%);
+
+      h1{
+        padding-left: 3em;
+      }
+     
+
+    }
+    
+    .episodes_spotify{
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      grid-template-rows: 1fr 1fr;
+    }
+
+    /* De dónde venimos */
+
+    .phone{
+      margin-top: -15%;
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+
+      h1{
+        padding-top: 3em;
+      }
+
+    }
+
+    .phone_img{
+
+      width: 45vw;
+      height: auto;
+      padding-left: 3em;
+    }
+
+     /* Invitadas/os estelares */
+
+     .stellar_guests{
+        h1{
+         padding-left: 3em; 
+        }
+    
+    }
+
+    .gallery{
+      grid-template-columns: 1fr 1fr 1fr;
+      grid-template-rows: 1fr 1fr;
+
+        img{
+          width: 33.33vw;
+          height: auto;
+        }
+
+      }
+
+  /* Algunos de nuestros temas */ 
+
+      
+    .topics{
+      flex-direction: column;
+
+        h1{
+          padding-left: 3em;
+        }
+
+    }
+
+    .icons{
+      width: 70%;
+      
+      display:flex;
+      flex-direction: row;
+      justify-content: space-between;
+
+      a{
+        text-decoration: none;
+      }
+
+    }
+
+  /* NOVEDADES */
+
+  .news{
+    min-height: 32em;
+    clip-path: polygon( 0 25%, 100% 0, 100% 100%, 0 100%);
+
+
+      h1{
+        padding-top: 3em;
+      }
+
+      a {
+        width: 50%;
+      }
+
+    }
+
+    /* footer */
+
+    .footer{
+      flex-direction: row;
+      justify-content: space-between;
+
+    }
+
+    .copyright{
+      margin-left: 6.9%;
+      font-size: 16px;
+    }
+
+   .social_media{
+      margin-right: 6.9%;
+    }
+
+    .social_media div {
+      margin-left: auto;
+      width: 50%;
+
+    }
+
+  }
+
+  
+
+    
+
+  
+
+
+
+
