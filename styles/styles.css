@@ -9,8 +9,8 @@
 }
 
 /* Mixins */
-/* main */
-main {
+/* content */
+.content {
   position: relative;
   width: 100%;
   display: -webkit-box;
@@ -20,6 +20,35 @@ main {
   -webkit-box-direction: normal;
       -ms-flex-direction: column;
           flex-direction: column;
+  overflow-x: hidden;
+}
+
+h1, h2 {
+  position: relative;
+  font-family: "IBM Plex Sans", sans-serif;
+  font-size: 36px;
+  color: #060A24;
+  letter-spacing: 0;
+  line-height: 42px;
+  margin-left: 0.25em;
+  font-weight: 400;
+}
+
+p {
+  font-family: "IBM Plex Mono", monospace;
+  color: #060A24;
+  font-size: 14px;
+  letter-spacing: 0;
+  line-height: 22px;
+  text-align: justify;
+  font-weight: 400;
+  padding-bottom: 2em;
+  padding-left: 1em;
+  padding-right: 1em;
+}
+
+a {
+  text-decoration: none;
 }
 
 /* nav */
@@ -138,44 +167,6 @@ main {
   top: 0;
 }
 
-/* content */
-.content {
-  display: -webkit-box;
-  display: -ms-flexbox;
-  display: flex;
-  -webkit-box-orient: vertical;
-  -webkit-box-direction: normal;
-      -ms-flex-direction: column;
-          flex-direction: column;
-}
-
-h1 {
-  font-family: "IBM Plex Sans", sans-serif;
-  font-size: 36px;
-  color: #060A24;
-  letter-spacing: 0;
-  line-height: 42px;
-  margin-left: 0.33em;
-  font-weight: 400;
-}
-
-p {
-  font-family: "IBM Plex Mono", monospace;
-  color: #060A24;
-  font-size: 14px;
-  letter-spacing: 0;
-  line-height: 22px;
-  text-align: justify;
-  font-weight: 400;
-  padding-bottom: 2em;
-  margin-left: 1em;
-  width: 95%;
-}
-
-a {
-  text-decoration: none;
-}
-
 /* header */
 .header {
   margin-right: 1em;
@@ -189,9 +180,17 @@ a {
           flex-direction: column;
 }
 
-.header span {
+.line-through {
   -webkit-text-decoration-line: line-through;
           text-decoration-line: line-through;
+}
+
+.dot {
+  color: #0000EC;
+}
+
+.paragraph_header_desktop {
+  display: none;
 }
 
 .button_1 {
@@ -205,13 +204,13 @@ a {
   text-decoration: none;
   text-align: center;
   padding: 1em;
-  margin: 0 auto;
   border: 0em;
   width: 80%;
   margin: 1em;
   -webkit-box-align: center;
       -ms-flex-align: center;
           align-items: center;
+  display: inline-block;
 }
 
 .button_1:hover {
@@ -226,18 +225,21 @@ a {
   position: relative;
   overflow: hidden;
   width: 100%;
+  margin-top: 2em;
   -webkit-clip-path: polygon(0 3%, 100% 0, 100% 97%, 0 100%);
           clip-path: polygon(0 3%, 100% 0, 100% 97%, 0 100%);
 }
 
-.episodes h1 {
+.episodes h2 {
   color: #fff;
   margin-top: 1.5em;
 }
 
-.episodes div {
-  padding: 0.5em 1em;
-  z-index: 5;
+.spotify {
+  width: 95%;
+  height: 232px;
+  padding: 0.5em;
+  border: 0;
 }
 
 /* De dónde venimos */
@@ -257,9 +259,9 @@ a {
   text-align: justify;
   font-weight: 400;
   padding-bottom: 2em;
-  margin-left: 1em;
+  padding-left: 1em;
+  padding-right: 1em;
   padding-bottom: 2em;
-  margin-left: 1em;
 }
 
 .phone_img {
@@ -341,7 +343,7 @@ a {
           clip-path: polygon(0 10%, 100% 0, 100% 100%, 0 100%);
 }
 
-.news h1 {
+.news h2 {
   color: #fff;
   padding-top: 1em;
 }
@@ -357,7 +359,6 @@ a {
   text-decoration: none;
   text-align: center;
   padding: 1em;
-  margin: 0 auto;
   border: 0em;
   width: 80%;
 }
@@ -373,7 +374,7 @@ a {
   -webkit-box-align: center;
       -ms-flex-align: center;
           align-items: center;
-  padding: 1em;
+  padding-bottom: 1em;
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
@@ -384,6 +385,20 @@ a {
   -webkit-box-pack: center;
       -ms-flex-pack: center;
           justify-content: center;
+}
+
+.copyright {
+  font-family: "IBM Plex Mono", monospace;
+  color: #060A24;
+  font-size: 14px;
+  letter-spacing: 0;
+  line-height: 22px;
+  text-align: justify;
+  font-weight: 400;
+  padding-bottom: 2em;
+  padding-left: 1em;
+  padding-right: 1em;
+  padding-bottom: 1em;
 }
 
 .social_media {
@@ -403,7 +418,9 @@ a {
   -webkit-box-pack: justify;
       -ms-flex-pack: justify;
           justify-content: space-between;
-  padding: 1em;
+  padding-left: 1em;
+  padding-right: 1em;
+  padding-bottom: 1em;
 }
 
 .social_media a {
@@ -412,7 +429,7 @@ a {
 
 /* 48em = 768px @ 16px font */
 @media screen and (min-width: 768px) and (max-width: 1023px) {
-  .content h1 {
+  .content h1, .content h2 {
     font-size: 42px;
   }
   .content p {
@@ -424,16 +441,27 @@ a {
     margin-right: 1em;
     top: 12.5em;
   }
-  .header p {
+  .dot {
+    color: #0000EC;
+  }
+  .paragraph_header_desktop {
     top: 17.75em;
     width: 53%;
   }
+  .paragraph_header_mobile {
+    display: none;
+  }
+  .paragraph_header_desktop {
+    display: block;
+    text-align: justify;
+  }
   .button_1 {
     top: 300em;
-    left: 12.5em;
-    width: 12.5em;
+    left: 13em;
+    width: 14.125em;
     font-size: 18px;
     line-height: 24px;
+    margin-left: 1em;
   }
   /* Episodios */
   .episodes {
@@ -441,7 +469,7 @@ a {
     -webkit-clip-path: polygon(0 5%, 100% 0, 100% 95%, 0 100%);
             clip-path: polygon(0 5%, 100% 0, 100% 95%, 0 100%);
   }
-  .episodes h1 {
+  .episodes h2 {
     padding-left: 3em;
   }
   .episodes_spotify {
@@ -451,16 +479,24 @@ a {
         grid-template-columns: 1fr 1fr;
     -ms-grid-rows: 1fr 1fr;
         grid-template-rows: 1fr 1fr;
+    margin: 0.5em;
+  }
+  .episodes_spotify div {
+    margin: 0.5em;
+  }
+  .spotify {
+    border: 0;
+    width: 95%;
   }
   /* De dónde venimos */
   .phone {
-    margin-top: -15%;
+    margin-top: -13%;
     display: -ms-grid;
     display: grid;
     -ms-grid-columns: 1fr 1fr;
         grid-template-columns: 1fr 1fr;
   }
-  .phone h1 {
+  .phone h2 {
     padding-top: 2em;
   }
   .phone_img {
@@ -469,7 +505,7 @@ a {
     padding-left: 3em;
   }
   /* Invitadas/os estelares */
-  .stellar_guests h1 {
+  .stellar_guests h2 {
     padding-left: 2em;
   }
   .gallery {
@@ -490,7 +526,7 @@ a {
         -ms-flex-direction: column;
             flex-direction: column;
   }
-  .topics h1 {
+  .topics h2 {
     padding-top: 1em;
     padding-left: 2em;
     padding-bottom: 1em;
@@ -509,7 +545,7 @@ a {
     -webkit-clip-path: polygon(0 25%, 100% 0, 100% 100%, 0 100%);
             clip-path: polygon(0 25%, 100% 0, 100% 100%, 0 100%);
   }
-  .news h1 {
+  .news h2 {
     padding-top: 3em;
   }
   .news a {
@@ -524,7 +560,7 @@ a {
   }
   /* nav */
   .navigation .logo {
-    padding-left: 6.25em;
+    margin-left: -6.5em;
   }
   .navigation li {
     float: left;
@@ -558,16 +594,20 @@ a {
     display: none;
   }
   /* content */
-  h1 {
+  h1, h2 {
+    position: relative;
     font-family: "IBM Plex Sans", sans-serif;
     font-size: 64px;
     color: #060A24;
     letter-spacing: 0;
+    line-height: 84px;
     padding-top: 1em;
     padding-bottom: 0.5em;
     font-weight: 400;
+    left: 0.1em;
   }
   p {
+    position: relative;
     font-family: "IBM Plex Mono", monospace;
     color: #060A24;
     font-size: 16px;
@@ -576,7 +616,7 @@ a {
     text-align: justify;
     font-weight: 400;
     padding-bottom: 2em;
-    margin-left: 1em;
+    left: 0.5em;
   }
   /* header */
   .header {
@@ -584,12 +624,23 @@ a {
     margin-right: 1em;
     top: 12.5em;
   }
+  .paragraph_header {
+    width: 39.25em;
+  }
+  .paragraph_header_mobile {
+    display: none;
+  }
+  .paragraph_header_desktop {
+    display: block;
+    text-align: justify;
+  }
   .button_1 {
     top: 300em;
-    left: 12.5em;
-    width: 12.5em;
+    left: 13em;
+    width: 14.125em;
     font-size: 18px;
     line-height: 24px;
+    margin-left: 1em;
   }
   /* Episodios */
   .episodes {
@@ -597,7 +648,7 @@ a {
     -webkit-clip-path: polygon(0 5%, 100% 0, 100% 95%, 0 100%);
             clip-path: polygon(0 5%, 100% 0, 100% 95%, 0 100%);
   }
-  .episodes h1 {
+  .episodes h2 {
     padding-left: 2.5em;
     color: #fff;
   }
@@ -609,15 +660,23 @@ a {
     -ms-grid-rows: 1fr 1fr;
         grid-template-rows: 1fr 1fr;
   }
+  .episodes_spotify div {
+    margin-left: 1em;
+    margin-bottom: 0.5em;
+  }
+  .spotify {
+    border: 0;
+    width: 95%;
+  }
   /* De dónde venimos */
   .phone {
-    margin-top: -15%;
+    margin-top: -13%;
     display: -ms-grid;
     display: grid;
     -ms-grid-columns: 1fr 1fr;
         grid-template-columns: 1fr 1fr;
   }
-  .phone h1 {
+  .phone h2 {
     padding-top: 4em;
   }
   .phone_img {
@@ -626,7 +685,7 @@ a {
     padding-left: 3em;
   }
   /* Invitadas/os estelares */
-  .stellar_guests h1 {
+  .stellar_guests h2 {
     padding-left: 2.5em;
   }
   .gallery {
@@ -647,7 +706,7 @@ a {
         -ms-flex-direction: column;
             flex-direction: column;
   }
-  .topics h1 {
+  .topics h2 {
     padding-left: 2.5em;
   }
   .icons {
@@ -669,7 +728,7 @@ a {
     -webkit-clip-path: polygon(0 25%, 100% 0, 100% 100%, 0 100%);
             clip-path: polygon(0 25%, 100% 0, 100% 100%, 0 100%);
   }
-  .news h1 {
+  .news h2 {
     padding-top: 3em;
   }
   .news a {

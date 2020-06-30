@@ -25,24 +25,17 @@ $IBMPlexSans: 'IBM Plex Sans', sans-serif;
 /* Mixins */
 
 @mixin h1_mobile{
+    position: relative;
     font-family: $IBMPlexSans;
     font-size: 36px;
     color: $font_color;
     letter-spacing: 0;
     line-height: 42px;
-    margin-left: 0.33em;
+    margin-left: 0.25em;
     font-weight: 400;
 }
 
-@mixin h1_laptop{
-  font-family: $IBMPlexSans;
-  font-size: 64px;
-  color:$font_color;
-  letter-spacing: 0;
-  padding-top: 1em;
-  padding-bottom: 0.5em;
-  font-weight: 400;
-}
+
 
 @mixin paragraph_mobile {
     font-family: $IBMPlexMono;
@@ -53,10 +46,27 @@ $IBMPlexSans: 'IBM Plex Sans', sans-serif;
     text-align: justify;
     font-weight: 400;
     padding-bottom: 2em;
-    margin-left: 1em;
- }
+    padding-left: 1em;
+    padding-right: 1em;
+}
 
- @mixin paragraph_laptop {
+@mixin h1_laptop{
+  position: relative;
+  font-family: $IBMPlexSans;
+  font-size: 64px;
+  color:$font_color;
+  letter-spacing: 0;
+  line-height: 84px;
+  padding-top: 1em;
+  padding-bottom: 0.5em;
+  font-weight: 400;
+  left: 0.1em;
+  
+  
+}
+
+@mixin paragraph_laptop {
+  position: relative;
   font-family: $IBMPlexMono;
   color: $font_color;
   font-size: 16px;
@@ -65,7 +75,7 @@ $IBMPlexSans: 'IBM Plex Sans', sans-serif;
   text-align: justify;
   font-weight: 400;
   padding-bottom: 2em;
-  margin-left: 1em;
+  left: 0.5em;
 }
     
 
@@ -80,8 +90,8 @@ $IBMPlexSans: 'IBM Plex Sans', sans-serif;
     text-decoration: none;
     text-align: center;
     padding: 1em;
-    margin: 0 auto;
     border: 0em;
+
   
     &:hover{
       text-decoration: none;
@@ -90,17 +100,30 @@ $IBMPlexSans: 'IBM Plex Sans', sans-serif;
     
 }
 
+    /* content */
 
+  .content{
+      position: relative;
+      width: 100%;
+      display: flex;
+      flex-direction: column;
+      overflow-x: hidden;
+      
+    }
 
-/* main */
-main {
-  position: relative;
-  width: 100%;
+  h1, h2{
+        @include h1_mobile();
 
-  display: flex;
-  flex-direction: column;
+      }
 
-}
+  p {
+     @include paragraph_mobile();
+      
+        }
+      
+  a{
+    text-decoration: none;
+    }
 
 /* nav */
 
@@ -230,28 +253,7 @@ main {
 
   }
 
-    /* content */
 
-  .content{
-      display: flex;
-      flex-direction: column;
-
-
-    }
-
-  h1{
-      @include h1_mobile();
-    }
-
-  p {
-      @include paragraph_mobile();
-      width: 95%;
-    
-      }
-    
-  a{
-    text-decoration: none;
-  }
     
     
   /* header */
@@ -261,12 +263,20 @@ main {
     top: 4.5625em;
 
     display: flex;
-    flex-direction: column;
-  
-      span{
-        text-decoration-line: line-through;
-      }
-      
+    flex-direction: column;  
+  }
+
+  .line-through{
+    text-decoration-line: line-through;
+  }
+
+  .dot{
+    color: #0000EC;
+  }
+
+  .paragraph_header_desktop{
+    display:none;
+
   }
 
   .button_1{
@@ -274,6 +284,7 @@ main {
     width: 80%;
     margin: 1em;
     align-items: center;
+    display: inline-block;
 
   }
 
@@ -287,18 +298,23 @@ main {
     position: relative;
     overflow: hidden;
     width: 100%;
+    margin-top: 2em;
     clip-path: polygon( 0 3%, 100% 0, 100% 97%, 0 100%);
 
-      h1{
+      h2{
         color: $white;
         margin-top: 1.5em;
       }
 
-      div{
-        padding: 0.5em 1em;
-        z-index: 5;
-      } 
+  }
 
+  .spotify{
+    width: 95%;
+    height: 232px;
+    padding: 0.5em;
+    border: 0;
+   
+    
   }
 
 /* De dónde venimos */
@@ -312,7 +328,7 @@ main {
       p {
         @include paragraph_mobile();
         padding-bottom: 2em;
-        margin-left: 1em;
+        
 
       }
   }
@@ -343,8 +359,6 @@ main {
         height: auto;
   
       }
-      
-
     }
 
 
@@ -388,7 +402,7 @@ main {
 
       clip-path: polygon( 0 10%, 100% 0, 100% 100%, 0 100%);
 
-        h1{
+        h2{
           color: $white;
           padding-top: 1em;
         }
@@ -405,11 +419,17 @@ main {
  .footer{
     background-color: $white;
     align-items: center;
-    padding: 1em;
+    padding-bottom: 1em;
+    
 
     display: flex;
     flex-direction: column;
     justify-content: center;
+  }
+
+  .copyright{
+    @include paragraph_mobile();
+    padding-bottom: 1em;
   }
 
   .social_media{   
@@ -419,7 +439,9 @@ main {
       div{
         display: flex;
         justify-content: space-between;
-        padding: 1em;
+        padding-left: 1em;
+        padding-right: 1em;
+        padding-bottom: 1em;
         }
 
       a{
@@ -434,7 +456,7 @@ main {
  @media screen and (min-width: 768px) and (max-width: 1023px)  {
     
       .content{
-        h1{
+        h1, h2{
           font-size: 42px;
         }
         p{
@@ -450,20 +472,35 @@ main {
           margin-right: 1em;
           top: 12.5em;
 
-            p {
-              top: 17.75em;
-              width: 53%;
-            }
-
         }
 
+        .dot{
+          color: #0000EC;
+        }
+
+        .paragraph_header_desktop{
+          top: 17.75em;
+          width: 53%;
+        }
+
+        .paragraph_header_mobile{
+          display:none;
+      
+        }
+    
+        .paragraph_header_desktop{
+          display: block;
+          text-align: justify;
+        }
+
+        
         .button_1{
-          
           top: 300em;
-          left: 12.5em;
-          width: 12.5em;
+          left: 13em;
+          width: 14.125em;
           font-size: 18px;
           line-height: 24px;
+          margin-left: 1em;
           
         }
 
@@ -474,7 +511,7 @@ main {
           min-height: 50em;
           clip-path: polygon( 0 5%, 100% 0, 100% 95%, 0 100%);
 
-          h1{
+          h2{
             padding-left: 3em;
           }
         
@@ -485,16 +522,29 @@ main {
           display: grid;
           grid-template-columns: 1fr 1fr;
           grid-template-rows: 1fr 1fr;
+          margin: 0.5em;
+
+          div{
+            margin: 0.5em;
+          }
+
+        }
+
+        .spotify{
+          
+          border: 0;
+          width: 95%;
+          
         }
 
         /* De dónde venimos */
 
         .phone{
-          margin-top: -15%;
+          margin-top: -13%;
           display: grid;
           grid-template-columns: 1fr 1fr;
 
-          h1{
+          h2{
             padding-top: 2em;
           }
 
@@ -510,7 +560,7 @@ main {
         /* Invitadas/os estelares */
 
         .stellar_guests{
-            h1{
+            h2{
             padding-left: 2em; 
             }
         
@@ -535,7 +585,7 @@ main {
           flex-direction: column;
          
 
-            h1{
+            h2{
               padding-top: 1em;
               padding-left: 2em;
               padding-bottom: 1em;
@@ -557,7 +607,7 @@ main {
         clip-path: polygon( 0 25%, 100% 0, 100% 100%, 0 100%);
 
 
-          h1{
+          h2{
             padding-top: 3em;
           }
 
@@ -582,7 +632,7 @@ main {
     /* nav */
 
     .navigation .logo{
-      padding-left: 6.25em;
+      margin-left: -6.5em;
     }
 
 
@@ -625,7 +675,7 @@ main {
       /* content */
 
 
-    h1{
+    h1, h2{
         @include h1_laptop();
       }
 
@@ -644,13 +694,30 @@ main {
 
     }
 
-    .button_1{
+    .paragraph_header{
+      width: 39.25em;
       
+    }
+
+    .paragraph_header_mobile{
+      display:none;
+  
+    }
+
+    .paragraph_header_desktop{
+      display: block;
+      text-align: justify;
+    }
+
+
+    .button_1{
+
       top: 300em;
-      left: 12.5em;
-      width: 12.5em;
+      left: 13em;
+      width: 14.125em;
       font-size: 18px;
       line-height: 24px;
+      margin-left: 1em;
       
     }
 
@@ -661,7 +728,7 @@ main {
       min-height: 66em;
       clip-path: polygon( 0 5%, 100% 0, 100% 95%, 0 100%);
 
-      h1{
+      h2{
         padding-left: 2.5em;
         color: $white;
       }
@@ -673,16 +740,30 @@ main {
       display: grid;
       grid-template-columns: 1fr 1fr;
       grid-template-rows: 1fr 1fr;
+      
+      div{
+        margin-left: 1em;
+        margin-bottom: 0.5em;
+      }
+
     }
+
+    .spotify{
+      
+      border: 0;
+      width: 95%;
+      
+    }
+
 
     /* De dónde venimos */
 
     .phone{
-      margin-top: -15%;
+      margin-top: -13%;
       display: grid;
       grid-template-columns: 1fr 1fr;
 
-      h1{
+      h2{
         padding-top: 4em;
       }
 
@@ -698,7 +779,7 @@ main {
      /* Invitadas/os estelares */
 
      .stellar_guests{
-        h1{
+        h2{
           padding-left: 2.5em;
         }
     
@@ -722,7 +803,7 @@ main {
       position: relative;
       flex-direction: column;
 
-        h1{
+        h2{
           padding-left: 2.5em;
         }
 
@@ -745,7 +826,7 @@ main {
     clip-path: polygon( 0 25%, 100% 0, 100% 100%, 0 100%);
 
 
-      h1{
+      h2{
         padding-top: 3em;
       }
 
@@ -778,15 +859,4 @@ main {
       width: 50%;
 
     }
-
   }
-
-  
-
-    
-
-  
-
-
-
-

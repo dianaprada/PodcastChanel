@@ -22,54 +22,64 @@
 </head>
 
 <body>
-    <main role="main">
+    <div class="content">
 
-        <nav class="navigation" role="navigation" aria-label="Menú principal">
-            <img class="logo" src="./images/logo.svg">
-            <input class="menu-btn" type="checkbox" id="menu-btn" />
-            <label class="menu-icon" for="menu-btn"><span class="nav-icon"></span></label>
-            <ul class="menu">
-                <li role="item"><a href="#episodes">EPISODIOS</a></li>
-                <li role="item"><a href="#phone">NOSOTROS</a></li>
-                <li role="item"><a href="#stellar_guests">ENTREVISTAS</a></li>
-                <li role="item"><a href="#topics">TÓPICOS</a></li>
-            </ul>
-        </nav>
+        <header class="header" id="header">
 
-        <div class="content">
-            <header role="banner" class="header" id="header">
-                <h1>Hello <span class="line-through">world</span> pale blue dot.</h1>
-                <p>El portal de podcasts que explora el mundo de la programación y la tecnología.
-                    Nuevos episodios, todos los jueves cada 15 días.</p>
+            <nav class="navigation" aria-label="Menú principal">
+                <img class="logo" src="./images/logo.svg" alt="Logo Posdcast Chanel">
+                <input class="menu-btn" type="checkbox" id="menu-btn" />
+                <label class="menu-icon" for="menu-btn"><span class="nav-icon"></span></label>
+                <ul class="menu">
+                    <li><a href="#episodes">EPISODIOS</a></li>
+                    <li><a href="#phone">NOSOTROS</a></li>
+                    <li><a href="#stellar_guests">ENTREVISTAS</a></li>
+                    <li><a href="#topics">TÓPICOS</a></li>
+                </ul>
+            </nav>
+
+            <div>
+                <h1>Hello <span class="line-through">world</span> pale blue dot<span class="dot">.</span></h1>
+
+                <p class="paragraph_header">
+                    <span class="paragraph_header_mobile">Un podcast que explora el mundo de la programación. Nuevos
+                        episodios, todos los jueves cada 15 días.</span>
+                    <span class="paragraph_header_desktop">El portal de podcasts que explora el mundo de la
+                        programación y la tecnología. Nuevos episodios, todos los jueves cada 15 días. </span>
+                </p>
 
                 <a href="#episodes" class="button_1">CONOCÉ MÁS </a>
 
-            </header>
+            </div>
 
-            <section class="episodes" id="episodes" name="episodes">
+        </header>
 
-                <h1>Episodios</h1>
+        <main>
+
+            <section class="episodes" id="episodes">
+
+                <h2>Episodios</h2>
 
                 <div class="episodes_spotify">
 
                     <div>
-                        <iframe src="https://open.spotify.com/embed-podcast/show/2ySVrxGkN6n6frMTo9Nsrt" width="100%"
-                            height="232" frameborder="0" allowtransparency="true" allow="encrypted-media"></iframe>
+                        <iframe src="https://open.spotify.com/embed-podcast/show/2ySVrxGkN6n6frMTo9Nsrt"
+                            class="spotify"></iframe>
                     </div>
 
                     <div>
-                        <iframe src="https://open.spotify.com/embed-podcast/show/4kYCRYJ3yK5DQbP5tbfZby" width="100%"
-                            height="232" frameborder="0" allowtransparency="true" allow="encrypted-media"></iframe>
+                        <iframe src="https://open.spotify.com/embed-podcast/show/4kYCRYJ3yK5DQbP5tbfZby"
+                            class="spotify"></iframe>
                     </div>
 
                     <div>
-                        <iframe src="https://open.spotify.com/embed-podcast/show/5JxcIaIkN8zx3Zy7yD9snv" width="100%"
-                            height="232" frameborder="0" allowtransparency="true" allow="encrypted-media"></iframe>
+                        <iframe src="https://open.spotify.com/embed-podcast/show/5JxcIaIkN8zx3Zy7yD9snv"
+                            class="spotify"></iframe>
                     </div>
 
                     <div>
-                        <iframe src="https://open.spotify.com/embed-podcast/show/2Iibd5A6R7mxkCm4NwNmUn" width="100%"
-                            height="232" frameborder="0" allowtransparency="true" allow="encrypted-media"></iframe>
+                        <iframe src="https://open.spotify.com/embed-podcast/show/2Iibd5A6R7mxkCm4NwNmUn"
+                            class="spotify"></iframe>
                     </div>
 
 
@@ -78,100 +88,115 @@
             </section>
 
             <section class="phone" id="phone">
-                <img class="phone_img" src="./images/phone.png" alt="The secret history of women in coding">
-                <div>
-                <h1>De dónde venimos</h1>
-                <p>Our posturings, our imagined self-importance, the delusion that we have some privileged position in
-                    the Universe, are challenged by this point of pale light. </p>
 
-                <p>Our planet is a lonely speck in the great enveloping cosmic dark. In our obscurity, in all this
-                    vastness, there is no hint that help will come from elsewhere to save us from ourselves.</p>
+                <img class="phone_img" src="./images/phone.png" alt="The secret history of women in coding">
+
+                <div>
+                    <h2>De dónde venimos</h2>
+
+                    <p>Our posturings, our imagined self-importance, the delusion that we have some privileged position
+                        in the Universe, are challenged by this point of pale light. </p>
+
+                    <p>Our planet is a lonely speck in the great enveloping cosmic dark. In our obscurity, in all this
+                        vastness, there is no hint that help will come from elsewhere to save us from ourselves.</p>
                 </div>
+
             </section>
 
-            <section class="stellar_guests" id="stellar_guests" name="stellar_guests">
-                <h1>Invitadas/os estelares</h1>
+            <section class="stellar_guests" id="stellar_guests">
+
+                <h2>Invitadas/os estelares</h2>
+
                 <div class="gallery">
                     <a class="link" href="https://es.wikipedia.org/wiki/Grace_Murray_Hopper" target="_blank">
                         <img src="./images/grace-hopper.png" alt="Grace Hopper" class="gallery_img"></a>
                     <a class="link" href="https://es.wikipedia.org/wiki/Katie_Bouman" target="_blank">
                         <img src="./images/Katie-Bouman.png" alt="Katie Bouman"></a>
-                    <a class="link" href="https://es.wikipedia.org/wiki/Margaret_Hamilton_(cient%C3%ADfica)" target="_blank">
+                    <a class="link" href="https://es.wikipedia.org/wiki/Margaret_Hamilton_(cient%C3%ADfica)"
+                        target="_blank">
                         <img src="./images/Margaret_Hamilton.png" alt="Margaret Hamilton"></a>
                     <a class="link" href="https://es.wikipedia.org/wiki/UNIVAC_I" target="_blank">
                         <img src="./images/univac.png" alt="An E.R.A.Univac 1103 computer in the 1950s"> </a>
                     <a class="link" href="https://es.wikipedia.org/wiki/ENIAC" target="_blank">
                         <img src="./images/eniac.png"
-                        alt="Computer operators with an Eniac — the world’s first programmable general-purpose computer"></a>
+                            alt="Computer operators with an Eniac — the world’s first programmable general-purpose computer"></a>
                     <a class="link" href="https://es.wikipedia.org/wiki/Susan_Kare" target="_blank">
                         <img src="./images/susan-kare.png" alt="Susan Kare"></a>
 
                 </div>
+
             </section>
 
-            <section class="topics" id="topics" name="topics">
-                <h1>Algunos de nuestros temas</h1>
+            <section class="topics" id="topics">
+
+                <h2>Algunos de nuestros temas</h2>
+
                 <div class="icons">
                     <div>
                         <a class="link" href="https://www.youtube.com/watch?v=ed29QzbY-X0" target="_blank">
-                        <img src="./images/icon1.svg">
-                        <p>Trabajo remoto</p> </a>
+                            <img src="./images/icon1.svg" alt="Trabajo remoto">
+                            <p>Trabajo remoto</p>
+                        </a>
                     </div>
                     <div>
                         <a class="link" href="https://www.acamica.com/blog/19/aprende-programando" target="_blank">
-                        <img class="link" src="./images/icon2.svg">
-                        <p>Repensando la  programación</p></a>
+                            <img class="link" src="./images/icon2.svg" alt="Repensando la programación">
+                            <p>Repensando la programación</p>
+                        </a>
                     </div>
                     <div>
-                        <a class="link" href="https://medium.com/comunidad-ac%C3%A1mica/5-tips-para-empezar-a-programar-84e2a09f05ce" target="_blank">
-                        <img src="./images/icon3.svg">
-                        <p>Bases del código</p> </a>
+                        <a class="link"
+                            href="https://medium.com/comunidad-ac%C3%A1mica/5-tips-para-empezar-a-programar-84e2a09f05ce"
+                            target="_blank">
+                            <img src="./images/icon3.svg" alt="Bases del código">
+                            <p>Bases del código</p>
+                        </a>
                     </div>
                     <div>
-                        <a class="link" href="https://www.acamica.com/cursos/1/introduccion-a-la-seguridad-de-la-informacion" target="_blank">
-                        <img src="./images/icon4.svg">
-                        <p>Seguridad informática</p> </a>
+                        <a class="link"
+                            href="https://www.acamica.com/cursos/1/introduccion-a-la-seguridad-de-la-informacion"
+                            target="_blank">
+                            <img src="./images/icon4.svg" alt="Seguridad informática">
+                            <p>Seguridad informática</p>
+                        </a>
                     </div>
                 </div>
 
             </section>
 
-            <section class="news" id="news" name="news">
-                <h1>¿Querés las últimas novedades?</h1>
+            <section class="news" id="news">
+
+                <h2>¿Querés las últimas novedades?</h2>
                 <a href="#episodes" class="button_2">ESCUCHÁ LOS EPISODIOS</a>
+
             </section>
+            
+        </main>
 
+        <footer class="footer" aria-label="Footer" id="footer">
+            <h4 class="copyright">
+                © 2019— Hello blue pale dot
+            </h4>
+            <div class="social_media">
+                <div>
+                    <a href="https://www.spotify.com/" target="_blank">
+                        <i class="fab fa-spotify"> </i> </a> </div>
+                <div>
+                    <a href="https://www.instagram.com/dianapprada/?hl=es-la" target="_blank">
+                        <i class="fab fa-instagram"> </i> </a> </div>
+                <div>
+                    <a href="https://twitter.com/dianapprada" target="_blank">
+                        <i class="fab fa-twitter"> </i> </a> </div>
+                <div>
+                    <a href="https://www.facebook.com/veroprada" target="_blank">
+                        <i class="fab fa-facebook"></i> </a> </div>
+                <div>
+                    <a href="https://web.telegram.org/" target="_blank">
+                        <i class="fab fa-telegram"></i> </a> </div>
+            </div>
 
-        </div>
-
-        <div>
-
-            <footer class="footer" aria-label="Footer" id="footer" name="footer">
-                <section class="copyright">
-                    <p>
-                        © 2019— Hello blue pale dot
-                    </p>
-
-                </section>
-                <section class="social_media">
-
-                    <div><a href="https://www.spotify.com/" target="_blank">
-                            <i class="fab fa-spotify"></i></a></div>
-                    <div><a href="https://www.instagram.com/dianapprada/?hl=es-la" target="_blank">
-                            <i class="fab fa-instagram"></i> </a> </div>
-                    <div><a href="https://twitter.com/dianapprada" target="_blank">
-                            <i class="fab fa-twitter"></i></div>
-                    <div><a href="https://www.facebook.com/veroprada" target="_blank">
-                            <i class="fab fa-facebook"></i></a></div>
-                    <div><a href="https://web.telegram.org/" target="_blank">
-                            <i class="fab fa-telegram"></i></a></div>
-
-                </section>
-
-            </footer>
-        </div>
-
-    </main>
+        </footer>
+    </div>
 
 
     <script src="https://kit.fontawesome.com/7396023e43.js" crossorigin="anonymous"></script>
